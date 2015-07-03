@@ -55,14 +55,14 @@ data Nat = Zero | Succ Nat
 equal :: Nat -> Nat -> Bool
 equal Zero Zero = True
 equal _    Zero = False
-equal Zero _	= False
+equal Zero _    = False
 equal (Succ x) (Succ y) = equal x y
 
 less :: Nat -> Nat -> Bool
-less Zero Zero 		= False
-less Zero _    		= True
-less _    Zero         	= False
-less (Succ x) (Succ y) 	= less x y
+less Zero Zero          = False
+less Zero _             = True
+less _    Zero          = False
+less (Succ x) (Succ y)  = less x y
 
 
 
