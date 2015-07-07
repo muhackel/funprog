@@ -3,6 +3,12 @@
 module Grundlagen where
 import Data.Maybe
 
+data Nat = Zero | Succ Nat
+    deriving Show
+
+main :: IO ()
+main = putStrLn $ show $ equal Zero Zero
+
 makeittwice :: (a->a) -> a -> a
 makeittwice f x = f $ f x
 
@@ -48,8 +54,6 @@ applyM _ Nothing = Nothing
 applyM f (Just x) = Just $ f x
 
 
-data Nat = Zero | Succ Nat
-    deriving Show
 
 
 equal :: Nat -> Nat -> Bool
