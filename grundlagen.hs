@@ -54,6 +54,13 @@ applyM _ Nothing = Nothing
 applyM f (Just x) = Just $ f x
 
 
+gennat :: Integer -> Nat
+gennat 0 = Zero
+gennat x = rgennat Zero x
+
+rgennat :: Nat -> Integer -> Nat
+rgennat x 0 = x
+rgennat x n = rgennat (Succ x) (n-1)
 
 
 equal :: Nat -> Nat -> Bool
